@@ -1,17 +1,9 @@
-import BookingRow from "features/bookings/BookingRow";
-import { useBookings } from "features/bookings/useBookings";
+import BookingRow from "./BookingRow";
+import Table from "../../ui/Table";
+import Menus from "../../ui/Menus";
 
-import Spinner from "ui/Spinner";
-import Table from "ui/Table";
-import Menus from "ui/Menus";
-import Pagination from "ui/Pagination";
-import Empty from "ui/Empty";
-
-export default function BookingTable() {
-  const { bookings, count, isLoading } = useBookings();
-
-  if (isLoading) return <Spinner />;
-  if (!bookings) return <Empty resource={"bookings"} />;
+function BookingTable() {
+  const bookings = [];
 
   return (
     <Menus>
@@ -31,11 +23,9 @@ export default function BookingTable() {
             <BookingRow key={booking.id} booking={booking} />
           )}
         />
-
-        <Table.Footer>
-          <Pagination count={count} />
-        </Table.Footer>
       </Table>
     </Menus>
   );
 }
+
+export default BookingTable;

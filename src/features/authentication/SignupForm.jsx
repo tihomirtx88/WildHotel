@@ -3,7 +3,9 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 
-export default function SignupForm() {
+// Email regex: /\S+@\S+\.\S+/
+
+function SignupForm() {
   return (
     <Form>
       <FormRow label="Full name" error={""}>
@@ -32,3 +34,5 @@ export default function SignupForm() {
     </Form>
   );
 }
+
+export default SignupForm;
