@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useUser } from "./useUser";
 
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
@@ -7,8 +6,9 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 
+import { useUser } from "./useUser";
 
-export default function UpdateUserDataForm() {
+function UpdateUserDataForm() {
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
   const {
     user: {
@@ -19,8 +19,8 @@ export default function UpdateUserDataForm() {
 
   const [fullName, setFullName] = useState(currentFullName);
   const [
-    // avatar, 
-    setAvatar] = useState(null);
+    // avatar,
+     setAvatar] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -55,3 +55,5 @@ export default function UpdateUserDataForm() {
     </Form>
   );
 }
+
+export default UpdateUserDataForm;

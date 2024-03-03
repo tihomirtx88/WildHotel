@@ -1,8 +1,8 @@
-import SortBy from "ui/SortBy";
-import Filter from "ui/Filter";
-import TableOperations from "ui/TableOperations";
+import SortBy from "../../ui/SortBy";
+import Filter from "../../ui/Filter";
+import TableOperations from "../../ui/TableOperations";
 
-export default function BookingTableOperations() {
+function BookingTableOperations() {
   return (
     <TableOperations>
       <Filter
@@ -29,3 +29,5 @@ export default function BookingTableOperations() {
     </TableOperations>
   );
 }
+
+export default BookingTableOperations;
