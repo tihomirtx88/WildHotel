@@ -114,6 +114,13 @@ export default function Uploader() {
     setIsLoading(false);
   }
 
+  async function uploadBookings() {
+    setIsLoading(true);
+    await deleteBookings();
+    await createBookings();
+    setIsLoading(false);
+  }
+
   return (
     <div
       style={{
