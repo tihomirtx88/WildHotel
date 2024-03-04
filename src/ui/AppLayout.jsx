@@ -4,15 +4,23 @@ import Header from "./Header";
 import styled from "styled-components";
 
 const StyledApplayout = styled.div`
- display: grid;
- height: 100vh;
- grid-template-columns: 26rem 1fr;
- grid-template-rows: auto 1fr;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 26rem 1fr;
+  grid-template-rows: auto 1fr;
 `;
 
 const Main = styled.main`
-   background: var(--color-gray-50);
+  background: var(--color-gray-50);
   padding: 4rem 4.8rem 6.4rem;
+`;
+
+const Container = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 `;
 
 export default function AppLayout() {
@@ -21,7 +29,9 @@ export default function AppLayout() {
       <Sidebar />
       <Header />
       <Main>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </Main>
     </StyledApplayout>
   );
