@@ -7,6 +7,8 @@ import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import { useForm } from "react-hook-form";
 
+import {useCrateCabin} from './useCreateCabins';
+
 const FormRow = styled.div`
   display: grid;
   align-items: center;
@@ -44,37 +46,46 @@ export const Error = styled.span`
 `;
 
 function CreateCabinForm() {
-  const {register, handleSubmit} = useForm();
+  const {isCreating, createCabin} = useCrateCabin();
+  // fill for edit TODo
 
-  function onSubmit(e){
-    e.preventDefault();
+  const {register, handleSubmit, reset} = useForm();
+
+  function onSubmit(data){
+
+    createCabin({...data}, {
+      onSuccess: (data) => {
+        reset();
+        console.log(data);
+      },
+    });
 
   }
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormRow>
+      <FormRow label="Cabin name">
         <Label htmlFor="name">Cabin name</Label>
-        <Input type="text" id="name" {...register("name")}/>
+        <Input type="text" id="name" {...register("name")} disabled={isCreating}/>
       </FormRow>
 
       <FormRow>
         <Label htmlFor="maxCapacity">Maximum capacity</Label>
-        <Input type="number" id="maxCapacity" {...register("maxCapacity")}/>
+        <Input type="number" id="maxCapacity" {...register("maxCapacity")} disabled={isCreating}/>
       </FormRow>
 
       <FormRow>
         <Label htmlFor="regularPrice">Regular price</Label>
-        <Input type="number" id="regularPrice" {...register("regularPrice")}/>
+        <Input type="number" id="regularPrice" {...register("regularPrice")} disabled={isCreating}/>
       </FormRow>
 
       <FormRow>
         <Label htmlFor="discount">Discount</Label>
-        <Input type="number" id="discount" defaultValue={0} {...register("discount")}/>
+        <Input type="number" id="discount" defaultValue={0} {...register("discount")} disabled={isCreating}/>
       </FormRow>
 
       <FormRow>
-        <Label htmlFor="description">Description for website</Label>
-        <Textarea type="number" id="description" defaultValue="" {...register("description")}/>
+        <Label htmlFor="discription">Description for website</Label>
+        <Textarea type="number" id="discription" defaultValue="" {...register("discription")} disabled={isCreating}/>
       </FormRow>
 
       <FormRow>
@@ -87,7 +98,7 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button>Add cabin</Button>
+        <Button disabled={isCreating}>Add cabin</Button>
       </FormRow>
     </Form>
   );
