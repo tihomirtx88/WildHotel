@@ -17,12 +17,15 @@ function CreateCabinForm() {
   const { errors } = formState;
 
   function onSubmit(data) {
+    const image = typeof data.image === "string" ? data.image : data.image[0];
+    console.log(image);
+
     createCabin(
-      { ...data },
+      { ...data, image: image },
       {
         onSuccess: (data) => {
-          reset();
           console.log(data);
+          reset();
         },
       }
     );
@@ -38,17 +41,18 @@ function CreateCabinForm() {
         <Input
           type="text"
           id="name"
+          disabled={isCreating}
           {...register("name", {
             required: "This field is required",
           })}
-          disabled={isCreating}
         />
       </FormRow>
 
-      <FormRow label="Maximum capacity" error={errors?.name?.message}>
+      <FormRow label="Maximum capacity" error={errors?.maxCapacity?.message}>
         <Input
           type="number"
           id="maxCapacity"
+          disabled={isCreating}
           {...register("maxCapacity", {
             required: "This field is required",
             min: {
@@ -56,7 +60,6 @@ function CreateCabinForm() {
               message: "Capacity should be at least 1",
             },
           })}
-          disabled={isCreating}
         />
       </FormRow>
 
@@ -64,6 +67,7 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="regularPrice"
+          disabled={isCreating}
           {...register("regularPrice", {
             required: "This field is required",
             min: {
@@ -71,7 +75,6 @@ function CreateCabinForm() {
               message: "Capacity should be at least 1",
             },
           })}
-          disabled={isCreating}
         />
       </FormRow>
 
@@ -79,15 +82,14 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="discount"
+          disabled={isCreating}
           defaultValue={0}
           {...register("discount", {
             required: "This field is required",
             validate: (value) =>
               value <= getValues().regularPrice ||
-              // getValues()  Get values from all form
               "Discount should be less than regular price",
           })}
-          disabled={isCreating}
         />
       </FormRow>
 
@@ -99,15 +101,21 @@ function CreateCabinForm() {
           type="number"
           id="discription"
           defaultValue=""
+          disabled={isCreating}
           {...register("discription", {
             required: "This field is required",
           })}
-          disabled={isCreating}
         />
       </FormRow>
 
       <FormRow label="Cabin photo">
-        <FileInput id="image" accept="image/*" />
+        <FileInput
+          id="image"
+          accept="image/*"
+          {...register("image", {
+            required: "This field is required",
+          })}
+        />
       </FormRow>
 
       <FormRow>
@@ -115,7 +123,9 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button disabled={isCreating}>Add cabin</Button>
+        <Button disabled={isCreating}>
+          Create new cabin
+        </Button>
       </FormRow>
     </Form>
   );

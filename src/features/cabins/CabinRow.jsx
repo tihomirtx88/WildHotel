@@ -63,6 +63,7 @@ export default function CabinRow({ cabin }) {
     image,
     id: cabinId,
   } = cabin;
+  console.log();
   return (
     <TableRow role="row">
       <Img src={image} />
