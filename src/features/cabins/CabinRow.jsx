@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { formatCurrency } from "./../../utils/helpers";
+import CreateCabinForm from "./../cabins/CreateCabinForm";
 
 import {
-  // HiPencil,
+  HiPencil,
   // HiSquare2Stack,
   HiTrash,
 } from "react-icons/hi2";
+import { useState } from "react";
 
 const TableRow = styled.div`
   display: grid;
@@ -53,6 +55,7 @@ const ButtonDelete = styled.button`
 `;
 
 export default function CabinRow({ cabin }) {
+  const [showForm, setShowForm] = useState(false);
   const { isDeleting, deleteCabin } = useDeleteCabin();
 
   const {
@@ -65,15 +68,26 @@ export default function CabinRow({ cabin }) {
   } = cabin;
   console.log();
   return (
-    <TableRow role="row">
-      <Img src={image} />
-      <Cabin>{name}</Cabin>
-      <div>Fits up to {maxCapacity} guests</div>
-      <Price>{formatCurrency(regularPrice)}</Price>
-      <Discount>{formatCurrency(discount)}</Discount>
-      <ButtonDelete onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
-        <HiTrash />
-      </ButtonDelete>
-    </TableRow>
+    <>
+      <TableRow role="row">
+        <Img src={image} />
+        <Cabin>{name}</Cabin>
+        <div>Fits up to {maxCapacity} guests</div>
+        <Price>{formatCurrency(regularPrice)}</Price>
+        <Discount>{formatCurrency(discount)}</Discount>
+        <div>
+          <button onClick={() => setShowForm((show) => !show)}>
+            <HiPencil />
+          </button>
+          <ButtonDelete
+            onClick={() => deleteCabin(cabinId)}
+            disabled={isDeleting}
+          >
+            <HiTrash />
+          </ButtonDelete>
+        </div>
+      </TableRow>
+      {showForm && <CreateCabinForm cabinToEdit={cabin} />}
+    </>
   );
 }
