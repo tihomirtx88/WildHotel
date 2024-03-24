@@ -55,6 +55,7 @@ export async function createEditCabin(newCabin, id) {
   }
 
   //2 Upload image
+  // In case dublicate image, if there is already image to no repeat
   if (hasImagePath) return data;
 
   const { error: storageError } = await supabase.storage
