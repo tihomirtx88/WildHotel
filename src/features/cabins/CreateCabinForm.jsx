@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { useCrateCabin } from "./useCreateCabins";
 import useEditCabin from "./useEditCabin";
 
-function CreateCabinForm({ cabinToEdit = {} }) {
+function CreateCabinForm({ cabinToEdit = {}, onCloseNodal }) {
   const { isCreating, createCabin } = useCrateCabin();
   const { isEditing, editCabin } = useEditCabin();
   const isWorking = isCreating || isEditing;
@@ -34,6 +34,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           onSuccess: (data) => {
             console.log(data);
             reset();
+            onCloseNodal?.();
           },
         }
       );
@@ -44,6 +45,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           onSuccess: (data) => {
             console.log(data);
             reset();
+            onCloseNodal?.();
           },
         }
       );
@@ -54,7 +56,8 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
+    // Pass props to From component
+    <Form onSubmit={handleSubmit(onSubmit, onError)} type={onCloseNodal ? 'modal' : 'regular'}>
       <FormRow label="Cabin name" error={errors?.name?.message}>
         <Input
           type="text"
@@ -138,7 +141,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button variation="secondary" type="reset" onClick={()=> onCloseNodal?.()}>
           Cancel
         </Button>
         <Button disabled={isWorking}>
