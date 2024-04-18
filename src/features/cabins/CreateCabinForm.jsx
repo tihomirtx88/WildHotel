@@ -14,6 +14,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseNodal }) {
   const { isEditing, editCabin } = useEditCabin();
   const isWorking = isCreating || isEditing;
 
+
   const { id: editId, ...editValues } = cabinToEdit;
   // If there is id will be true
   const isEditSession = Boolean(editId);
@@ -27,6 +28,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseNodal }) {
   function onSubmit(data) {
     // Check if data is come from data.image
     const image = typeof data.image === "string" ? data.image : data.image[0];
+
     if (isEditSession)
       editCabin(
         { newCabinData: { ...data, image }, id: editId },
