@@ -34,6 +34,7 @@ const Amount = styled.div`
   font-weight: 500;
 `;
 
+// Imidiatly destructuring booking object
 function BookingRow({
   booking: {
     // id: bookingId,
