@@ -1,25 +1,35 @@
-import {  useQuery } from "@tanstack/react-query";
-import { getBookings } from '../../services/apiBookings';
+import { useQuery } from "@tanstack/react-query";
+import { getBookings } from "../../services/apiBookings";
 import { useSearchParams } from "react-router-dom";
 
-export function useBookings(){
-    const [searchParams] = useSearchParams();
+export function useBookings() {
+  const [searchParams] = useSearchParams();
 
-    // FILTER
-    const filterValue = searchParams.get('status');
-   
-    const filter = !filterValue || filterValue === 'all' 
-       ? null 
-       : {field: "status", value: filterValue}
-    //    : {field: "totalPrice", value: 5000, method: "gte"}
+  // FILTER
+  const filterValue = searchParams.get("status");
 
-    const { isLoading, data: bookings, error } = useQuery({
-                //   similar like dependency array like in useeeffect 
-        queryKey: ['bookings', filter],
-        queryFn: () =>  getBookings({filter}),
-    });
+  const filter =
+    !filterValue || filterValue === "all"
+      ? null
+      : { field: "status", value: filterValue };
+  //    : {field: "totalPrice", value: 5000, method: "gte"}
+
+  // SORT
+  const sortByRaw = searchParams.get("sortBy") || "startDate-desc";
+  const [field, direction] = sortByRaw.split("-");
+  const sortBy = { field, direction };
+ 
 
 
-    return {isLoading, bookings, error};
+  const {
+    isLoading,
+    data: bookings,
+    error,
+  } = useQuery({
+    //   similar like dependency array like in useeeffect
+    queryKey: ["bookings", filter, sortBy],
+    queryFn: () => getBookings({ filter, sortBy }),
+  });
+
+  return { isLoading, bookings, error };
 }
-
