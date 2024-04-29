@@ -51,11 +51,6 @@ export default function CheckinBooking() {
 
 
   const optionalBreakfastPrice = settings.breakfastPrice * numNight * numGuests;
-  console.log(settings.breakfast, 'setings breakfast');
-  console.log(numNight, 'num night');
-  console.log(numGuests, 'num guest');
-  console.log(optionalBreakfastPrice, 'optional breakfast');
-  console.log(settings, 'from settings');
 
   function handleCheckin() {
     if (!confirmPaid) return;
