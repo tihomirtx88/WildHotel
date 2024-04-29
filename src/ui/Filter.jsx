@@ -43,6 +43,7 @@ export default function Filter({ filterfield, optionsArray }) {
   function handleClick(value) {
     // Value is value pass in button click event
     searchParams.set(filterfield, value);
+    if(searchParams.get('page')) searchParams.set('page', 1);
     setSearchParams(searchParams);
   }
 
