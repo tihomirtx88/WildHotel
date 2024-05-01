@@ -1,19 +1,31 @@
-import { useState } from "react";
-import { Form } from "react-router-dom";
 
-import Input from './../../ui/Input';
-import FormRow from "../../ui/FormRow";
-import Button from './../../ui/Button';
+import FormRowVertical from "../../ui/FormRowVertical";
+import Input from "../../ui/Input";
+import Button from '../../ui/Button';
+import SpinnerMini from '../../ui/SpinnerMini';
+import { useState } from "react";
+import { useLogin } from "./useLogin";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("tihomir@abv.bg");
+  const [password, setPassword] = useState("777733");
 
-  function handleSubmit() {}
+  const { isLoadingLogin, loginData } = useLogin();
+
+  function handleSubmit(e) {
+     e.preventDefault();
+     if(!email || !password) return;
+     loginData({email, password}, {
+      onSettled: () => {
+        setEmail("");
+        setPassword("");
+      }
+     });
+  }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <FormRow label="Email address">
+    <form onSubmit={handleSubmit}>
+      <FormRowVertical label="Email address">
         <Input
           type="email"
           id="email"
@@ -21,20 +33,24 @@ export default function LoginForm() {
           autoComplete="username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoadingLogin}
         />
-      </FormRow>
-      <FormRow label="Password">
+      </FormRowVertical>
+      <FormRowVertical label="Password">
         <Input
           type="password"
           id="password"
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoadingLogin}
         />
-      </FormRow>
-      <FormRow>
-        <Button size="large">Login</Button>
-      </FormRow>
-    </Form>
+      </FormRowVertical>
+      <FormRowVertical>
+        <Button size="large" disabled={isLoadingLogin}>
+           {!isLoadingLogin ? 'Log in' : <SpinnerMini/>}
+        </Button>
+      </FormRowVertical>
+    </form>
   );
 }
