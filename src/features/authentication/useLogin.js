@@ -12,9 +12,9 @@ export function useLogin(){
 
         onSuccess: (user) => {
             // To prevent load user data again after success log in and save in react query cache
-            queryclient.setQueriesData(['user'], user);
+            queryclient.setQueryData(['user'], user.user);
             toast.success('You are successfuly login in your account');
-            navigate("/dashboard");
+            navigate("/dashboard", {replace: true});
         },
 
         onError: (err) => {
