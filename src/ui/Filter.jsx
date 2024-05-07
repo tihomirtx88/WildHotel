@@ -38,7 +38,7 @@ const FilterButton = styled.button`
 export default function Filter({ filterfield, optionsArray }) {
   // Store value in url
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentfilter = searchParams.get(filterfield) || optionsArray.at(0).value;
+  const currentfilter = searchParams.get(filterfield) || optionsArray?.at(0).value;
 
   function handleClick(value) {
     // Value is value pass in button click event
