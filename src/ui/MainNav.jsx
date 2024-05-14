@@ -82,6 +82,12 @@ export default function MainNav() {
           </StylesNavLink>
         </li>
         <li>
+          <StylesNavLink to="/profile">
+            <HiOutlineUsers />
+            <span>Profile</span>
+          </StylesNavLink>
+        </li>
+        <li>
           <StylesNavLink to="/settings">
             <HiOutlineCog6Tooth />
             <span>Settings</span>

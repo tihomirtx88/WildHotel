@@ -17,6 +17,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: false,
     numGuests: 1,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-33, true),
@@ -27,6 +32,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 2,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-27, true),
@@ -37,6 +47,11 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: false,
     numGuests: 2,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 002
@@ -49,6 +64,11 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: true,
     numGuests: 2,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-2, true),
@@ -59,6 +79,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 2,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-5, true),
@@ -69,6 +94,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: false,
     numGuests: 2,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 003
@@ -81,6 +111,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-2, true),
@@ -91,6 +126,11 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: true,
     numGuests: 3,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-14, true),
@@ -101,6 +141,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 004
@@ -113,6 +158,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-1, true),
@@ -123,6 +173,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: false,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-3, true),
@@ -131,9 +186,12 @@ export const bookings = [
     cabinId: 4,
     guestId: 13,
     hasBreakfast: false,
-
     isPaid: true,
-    numGuests: 1,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 005
@@ -147,6 +205,11 @@ export const bookings = [
  
     isPaid: false,
     numGuests: 5,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-6, true),
@@ -157,6 +220,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-4, true),
@@ -167,6 +235,11 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: true,
     numGuests: 6,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 006
@@ -180,6 +253,11 @@ export const bookings = [
 
     isPaid: true,
     numGuests: 6,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-16, true),
@@ -191,6 +269,11 @@ export const bookings = [
 
     isPaid: true,
     numGuests: 4,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-18, true),
@@ -202,6 +285,11 @@ export const bookings = [
 
     isPaid: true,
     numGuests: 6,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 007
@@ -214,6 +302,11 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: false,
     numGuests: 8,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-7, true),
@@ -225,6 +318,11 @@ export const bookings = [
 
     isPaid: true,
     numGuests: 7,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-55, true),
@@ -236,6 +334,11 @@ export const bookings = [
 
     isPaid: true,
     numGuests: 6,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 
   // CABIN 008
@@ -248,6 +351,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 9,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(0, true),
@@ -258,6 +366,11 @@ export const bookings = [
     hasBreakfast: true,
     isPaid: true,
     numGuests: 10,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
   {
     created_at: fromToday(-10, true),
@@ -268,5 +381,10 @@ export const bookings = [
     hasBreakfast: false,
     isPaid: true,
     numGuests: 7,
+    numNight:3,
+    cabinPrice: 300,
+    extrasPrice: 200,
+    totalPrice:1000,
+    observation: 'Amazing travel and room'
   },
 ];
