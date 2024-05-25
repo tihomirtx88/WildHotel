@@ -30,6 +30,18 @@ function SignupForm() {
         })}/>
       </FormRow>
 
+      <FormRow label="nationalID" error={errors?.nationalID?.message}>
+        <Input disabled={isLoading} type="text" id="nationalID" {...register("nationalID", {
+          required: 'This field is required'
+        })}/>
+      </FormRow>
+
+      <FormRow label="nationality" error={errors?.nationality?.message}>
+        <Input disabled={isLoading} type="text" id="nationality" {...register("nationality", {
+          required: 'This field is required'
+        })}/>
+      </FormRow>
+
       <FormRow label="Email address" error={errors?.email?.message}>
         <Input disabled={isLoading} type="email" id="email" {...register("email", {
           required: 'This field is required', pattern: {value: /\S+@\S+\.\S+/, message: 'Please provide a valid email address'}
