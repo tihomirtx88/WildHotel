@@ -54,6 +54,7 @@ const StylesNavLink = styled(NavLink)`
 `;
 
 export default function MainNav() {
+
   return (
     <nav>
       <NavList>
@@ -82,7 +83,7 @@ export default function MainNav() {
           </StylesNavLink>
         </li>
         <li>
-          <StylesNavLink to="/profile">
+          <StylesNavLink to="profile">
             <HiOutlineUsers />
             <span>Profile</span>
           </StylesNavLink>

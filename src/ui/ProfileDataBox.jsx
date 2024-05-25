@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const StyledProfileDataBox = styled.section`
   /* Box */
   background-color: var(--color-grey-0);
@@ -42,19 +41,24 @@ const Header = styled.header`
 
 const ProfileInfo = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 1.2rem;
   margin-bottom: 1.6rem;
   color: var(--color-grey-500);
 
   & p:first-of-type {
     font-weight: 500;
-    color: var(--color-grey-700);
   }
 `;
 
 const Section = styled.section`
   padding: 3.2rem 4rem 1.2rem;
+`;
+
+
+const ProfileEmail = styled.p`
+  color: var(--color-green-700);
 `;
 
 const NationalIdAndFlag = styled.div`
@@ -81,17 +85,31 @@ const NationalIdAndFlag = styled.div`
   }
 `;
 
-export default function ProfileDataBox(){
-    return(
-        <StyledProfileDataBox>
-            <Header>Users information TODO</Header>
+const ProfileAvatar = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+`;
 
-            <Section>
-              <ProfileInfo>
-                  FullName , email
-              </ProfileInfo>
-              <NationalIdAndFlag>national id and flag TODO</NationalIdAndFlag>
-            </Section>
-        </StyledProfileDataBox>
-    );
+export default function ProfileDataBox({ user }) {
+  const { user_metadata, email } = user;
+
+  console.log(user);
+  return (
+    <StyledProfileDataBox>
+      <Header>Personal information</Header>
+
+      <Section>
+        <ProfileInfo>
+          <ProfileEmail>
+           {email}
+          </ProfileEmail>
+        </ProfileInfo>
+        <NationalIdAndFlag>
+          <ProfileAvatar src={user_metadata.avatar} alt="" />
+          <ProfileEmail>National ID: 3432432</ProfileEmail>
+        </NationalIdAndFlag>
+      </Section>
+    </StyledProfileDataBox>
+  );
 }

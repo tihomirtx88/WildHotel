@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 
 export default function TodayItem({activity}){
   const { id, numNight, status, guests} = activity;
- console.log(activity);
+
 
   return(
     <StyledTodayItem>
