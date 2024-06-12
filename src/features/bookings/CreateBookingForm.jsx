@@ -14,22 +14,23 @@ export default function CreateBookingForm({ onCloseNodal }) {
   const { cabins } = useCabins();
   const { user } = useUser();
 
-
   console.log(cabins, "cabins");
   const isWorking = isLoadingbooking;
 
   const { register, handleSubmit, watch, setValue , reset, formState } = useForm();
   const [selectedCabinPrice, setSelectedCabinPrice] = useState("");
+  const [selectedCabinImage, setSelectedCabinImage] = useState("");
 
   const selectedCabinId = Number(watch("cabinId"));
-  console.log(selectedCabinId, "fromcabins price");
 
   useEffect(() => {
     const selectedCabin = cabins?.find((cabin) => cabin.id === selectedCabinId);
     if (selectedCabin) {
       setSelectedCabinPrice(selectedCabin.regularPrice);
+      setSelectedCabinImage(selectedCabin.image);
     } else {
       setSelectedCabinPrice("");
+      setSelectedCabinImage("");
     }
   }, [selectedCabinId, cabins]);
 
@@ -147,6 +148,10 @@ export default function CreateBookingForm({ onCloseNodal }) {
 
       <FormRow label="Cabin Price">
         <input style={{color: 'black'}} type="text" value={selectedCabinPrice} readOnly />
+      </FormRow>
+
+      <FormRow label="Cabin Image">
+        <img src={selectedCabinImage}/>
       </FormRow>
 
 
