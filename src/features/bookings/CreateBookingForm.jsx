@@ -13,7 +13,7 @@ export default function CreateBookingForm({ onCloseNodal }) {
   const { createBooking, isLoadingbooking } = useCreateBookings();
   const { cabins } = useCabins();
   const { user } = useUser();
-  // const guestId = convertUuidToInteger(user.id);
+
 
   console.log(cabins, "cabins");
   const isWorking = isLoadingbooking;
