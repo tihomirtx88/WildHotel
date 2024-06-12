@@ -13,7 +13,7 @@ const Img = styled.img`
 export default function Logo() {
   const { isDarkMode } = useDarkMode();
 
-  const src = isDarkMode ? '' : "/WildHotelLogo.png";
+  const src = isDarkMode ? '/WildHotelLogo.png' : "/WildHotelLogo.png";
 
   return (
     <StyledLogo>

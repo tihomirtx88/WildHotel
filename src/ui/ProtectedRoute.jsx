@@ -31,5 +31,5 @@ export default function ProtectedRoute({ children }) {
     );
 
   // 4. If there is user redner app
-  if(isAuthenticated) return children;
+  if (isAuthenticated) return children;
 }

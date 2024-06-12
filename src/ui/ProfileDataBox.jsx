@@ -94,7 +94,7 @@ const ProfileAvatar = styled.img`
 export default function ProfileDataBox({ user }) {
   const { user_metadata, email } = user;
 
-  console.log(user);
+
   return (
     <StyledProfileDataBox>
       <Header>Personal information</Header>

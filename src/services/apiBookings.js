@@ -1,6 +1,6 @@
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase.";
-import { PAGE_SIZE } from '../utils/constants';
+import { PAGE_SIZE } from "../utils/constants";
 import { subDays } from "date-fns";
 
 export async function getBookings({ filter, sortBy, page }) {
@@ -18,9 +18,9 @@ export async function getBookings({ filter, sortBy, page }) {
     query = query.order(sortBy.field, {
       ascending: sortBy.direction === "asc",
     });
-  
+
   // PAGINATION
-  if(page){
+  if (page) {
     const from = (page - 1) * PAGE_SIZE;
     const to = from + PAGE_SIZE - 1;
     query = query.range(from, to);
@@ -62,7 +62,7 @@ export async function getBookingsAfterDate(date) {
     console.error(error);
     throw new Error("Bookings could not get loaded");
   }
-  
+
   return data;
 }
 
@@ -85,7 +85,7 @@ export async function getStaysAfterDate(date) {
 
 // Activity means that there is a check in or a check out today
 export async function getStaysTodayActivity() {
-    // Get the date for 24 hours ago
+  // Get the date for 24 hours ago
   const oneDayAgo = subDays(new Date(), 1);
   const { data, error } = await supabase
     .from("bookings")
@@ -93,14 +93,13 @@ export async function getStaysTodayActivity() {
     // .or(
     //   `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
     // )
-    .gte('created_at', oneDayAgo.toISOString())
+    .gte("created_at", oneDayAgo.toISOString())
     .order("created_at");
 
   // Equivalent to this.
   // (stay.status === 'unconfirmed' && isToday(new Date(stay.startDate))) ||
   // (stay.status === 'checked-in' && isToday(new Date(stay.endDate)))
   if (error) {
-  
     throw new Error("Bookings could not get loaded");
   }
 
@@ -130,5 +129,16 @@ export async function deleteBookingApi(id) {
     console.error(error);
     throw new Error("Booking could not be deleted");
   }
+  return data;
+}
+
+export async function createBookingApi(newBooking) {
+  const {data,  error } = await supabase.from("bookings").insert(newBooking);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Booking could not be created");
+  }
+
   return data;
 }
