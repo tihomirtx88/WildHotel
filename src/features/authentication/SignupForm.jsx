@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import useSignUp from "./useSignUp";
+import FormRowVertical from "../../ui/FormRowVertical";
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -27,8 +26,8 @@ function SignupForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormRow label="Full name" error={errors?.fullName?.message}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <FormRowVertical label="Full name" error={errors?.fullName?.message}>
         <Input
           disabled={isLoading}
           type="text"
@@ -38,9 +37,9 @@ function SignupForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="nationalID" error={errors?.nationalID?.message}>
+      <FormRowVertical label="nationalID" error={errors?.nationalID?.message}>
         <Input
           disabled={isLoading}
           type="text"
@@ -50,9 +49,9 @@ function SignupForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="nationality" error={errors?.nationality?.message}>
+      <FormRowVertical label="nationality" error={errors?.nationality?.message}>
         <Input
           disabled={isLoading}
           type="text"
@@ -62,9 +61,9 @@ function SignupForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="countryFlag" error={errors?.countryFlag?.message}>
+      <FormRowVertical label="countryFlag" error={errors?.countryFlag?.message}>
         <Input
           placeholder="https://flagcdn.com/bg.svg"
           disabled={isLoading}
@@ -74,9 +73,9 @@ function SignupForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="Admin Role" error={errors?.admin?.message}>
+      <FormRowVertical label="Admin Role" error={errors?.admin?.message}>
         <Input
           disabled={isLoading}
           type="text"
@@ -85,9 +84,9 @@ function SignupForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="Email address" error={errors?.email?.message}>
+      <FormRowVertical label="Email address" error={errors?.email?.message}>
         <Input
           disabled={isLoading}
           type="email"
@@ -101,9 +100,9 @@ function SignupForm() {
             },
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow
+      <FormRowVertical
         label="Password (min 8 characters)"
         error={errors?.password?.message}
       >
@@ -119,9 +118,9 @@ function SignupForm() {
             },
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow label="Repeat password" error={errors?.passwordConfirm?.message}>
+      <FormRowVertical label="Repeat password" error={errors?.passwordConfirm?.message}>
         <Input
           disabled={isLoading}
           type="password"
@@ -132,9 +131,9 @@ function SignupForm() {
               value === getValues().password || "Password must to match",
           })}
         />
-      </FormRow>
+      </FormRowVertical>
 
-      <FormRow>
+      <FormRowVertical>
         {/* type is an HTML attribute! */}
         <Button
           disabled={isLoading}
@@ -145,8 +144,8 @@ function SignupForm() {
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
-      </FormRow>
-    </Form>
+      </FormRowVertical>
+    </form>
   );
 }
 

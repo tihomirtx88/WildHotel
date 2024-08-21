@@ -53,7 +53,7 @@ export default function LoginForm() {
         <Button size="large" disabled={isLoadingLogin}>
            {!isLoadingLogin ? 'Log in' : <SpinnerMini/>}
         </Button>
-        <Button size="large" onClick={()=> navigate('/signUpUser')}>
+        <Button size="large" onClick={()=> navigate('/register')}>
            Sign Up
         </Button>
       </FormRowVertical>
