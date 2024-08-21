@@ -5,10 +5,13 @@ import Button from '../../ui/Button';
 import SpinnerMini from '../../ui/SpinnerMini';
 import { useState } from "react";
 import { useLogin } from "./useLogin";
+import { useNavigate } from "react-router";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("tihomir@abv.bg");
+  const [email, setEmail] = useState("superAdmin@abv.bg");
   const [password, setPassword] = useState("777733");
+
+  const navigate = useNavigate();
 
   const { isLoadingLogin, loginData } = useLogin();
 
@@ -49,6 +52,9 @@ export default function LoginForm() {
       <FormRowVertical>
         <Button size="large" disabled={isLoadingLogin}>
            {!isLoadingLogin ? 'Log in' : <SpinnerMini/>}
+        </Button>
+        <Button size="large" onClick={()=> navigate('/signUpUser')}>
+           Sign Up
         </Button>
       </FormRowVertical>
     </form>
