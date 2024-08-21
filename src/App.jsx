@@ -18,7 +18,7 @@ import Checkin from "./pages/Checkin";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import Profile from "./pages/Profile";
-import SingUpFormForUsers from "./features/authentication/SingUpFormForUsers";
+import Register from "./pages/Register";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,7 +49,7 @@ function App() {
               <Route path="account" element={<Account />} />
             </Route>
             <Route path="login" element={<Login />} />
-            <Route path="signUpUser" element={<SingUpFormForUsers/>}/>
+            <Route path="register" element={<Register/>}/>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Toaster
