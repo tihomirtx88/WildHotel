@@ -58,7 +58,7 @@ export default function SalesChart({bookings, numDays}) {
       };
 
   return (
-    <StyledSalesChart>
+    <StyledSalesChart className="sales-chart-container">
       <Heading as="h2">Sales From {format(allDates.at(0), 'MMM dd yyyy')} &mdash; {format(allDates.at(-1), 'MMM dd yyyy')}</Heading>
 
       <ResponsiveContainer height={300} width="100%">

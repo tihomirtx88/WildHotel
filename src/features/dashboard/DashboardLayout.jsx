@@ -24,7 +24,7 @@ export default function DashboardLayout(){
   if(isLoading || isLoadingStays || isLoadingVabins) return <Spinner/>;
 
   return(
-    <StyledDashboardLayout>
+    <StyledDashboardLayout className="dashboard-layout-container">
         <Stats bookings={bookings} confirmedStays={confirmedStays} numDays={numDays} cabinCount={cabins.length}/>
         <TodayActivity/>
         <DurationChart confirmedStays={confirmedStays}/>

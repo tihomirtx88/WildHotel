@@ -44,7 +44,7 @@ export default function TodayActivity(){
   const { isLoading, filteredStays: activities} = useTodayActivity();
 
     return (
-        <StyledToday>
+        <StyledToday className="today-activiti-container">
           <Row type="horizontal">
             <Heading as="h2">Today</Heading>
           </Row>

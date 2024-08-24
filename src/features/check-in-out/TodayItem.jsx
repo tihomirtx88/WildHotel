@@ -29,7 +29,7 @@ export default function TodayItem({ activity }) {
   console.log(guests);
 
   return (
-    <StyledTodayItem>
+    <StyledTodayItem className="today-activiti-container-li">
       {status === "unconfirmed" && <Tag type="green">Arraving</Tag>}
 
       {status === "checked-in" && <Tag type="blue">Departing</Tag>}

@@ -1,0 +1,71 @@
+/* Responsive design */
+
+@media (max-width: 1024px) {
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header-wrapper {
+    order: 1;
+    width: 100%;
+  }
+
+  .sidebar-wrapper {
+    order: 2;
+    width: 20%;
+  }
+
+  .main-wrapper {
+    order: 3;
+    width: 80%;
+    padding: 2rem;
+  }
+
+  .dashboard-layout-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .stats-container {
+    width: 22.6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .stats-container > div {
+    padding: 1rem;
+  }
+  .today-activiti-container,
+  .chart-box-container,
+  .sales-chart-container {
+    width: 100%;
+  }
+
+  .stats-title {
+    align-self: center;
+  }
+
+  .today-activiti-container-li {
+    grid-template-columns: 9rem 2rem 1fr 7rem 11rem;
+  }
+
+  .bookings-header-container {
+    flex-direction: column;
+    align-items: initial;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+    .stats-container {
+        width: 22.2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        width: 21.2%;
+    }
+}
