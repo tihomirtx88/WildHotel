@@ -7,7 +7,7 @@ import AddBooking from '../features/bookings/AddBooking';
 export default function Bookings() {
   return(
   <>
-    <Row type="horizontal">
+    <Row className="bookings-header-container" type="horizontal">
       <Heading as="h1">All bookings</Heading>
       <BookingTableOperations/>
     </Row>

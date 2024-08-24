@@ -49,9 +49,9 @@ const Value = styled.p`
 
 export default function Stat({ icon, title, value, color }) {
   return (
-    <StyledStat>
+    <StyledStat className="stats-container">
       <Icon color={color}>{icon}</Icon>
-      <Title>{title}</Title>
+      <Title className="stats-title">{title}</Title>
       <Value>{value}</Value>
     </StyledStat>
   );

@@ -149,7 +149,7 @@ export default function DurationChart({ confirmedStays }) {
  
 
   return (
-    <ChartBox>
+    <ChartBox className="chart-box-container">
       <Heading as="h2">Stay duration summary</Heading>
       <ResponsiveContainer width="100%" height={240}>
         <PieChart>

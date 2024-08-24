@@ -16,7 +16,7 @@ const StyledSidebar = styled.aside`
  
 export default function Sidebar(){
     return(
-        <StyledSidebar>
+        <StyledSidebar className="sidebar-wrapper">
            <Logo/>
            <MainNav/>
            <Uploader/>
