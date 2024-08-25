@@ -89,12 +89,12 @@ function Window({ children, name }) {
   if (name !== openName) return null;
 
   return createPortal(
-    <Overlay>
-      <StyledModal ref={ref}>
+    <Overlay >
+      <StyledModal className="form-overlay" ref={ref}>
         <Button onClick={close}>
           <HiXMark />
         </Button>
-        <div>{cloneElement(children, {onCloseNodal: close})}</div>
+        <div className="form-overlay-body">{cloneElement(children, {onCloseNodal: close})}</div>
       </StyledModal>
     </Overlay>,
     document.body

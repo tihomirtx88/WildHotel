@@ -13,7 +13,7 @@ export default function Account(){
             <UpdateUserDataForm/>
           </Row>
     
-          <Row>
+          <Row >
             <Heading as="h3">Update password</Heading>
             <UpdatePasswordForm/>
           </Row>

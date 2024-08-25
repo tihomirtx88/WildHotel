@@ -68,7 +68,7 @@ export default function CheckinBooking() {
 
   return (
     <>
-      <Row type="horizontal">
+      <Row className="chekin-box-header-container" type="horizontal">
         <Heading as="h1">Check in booking #{bookingId}</Heading>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>

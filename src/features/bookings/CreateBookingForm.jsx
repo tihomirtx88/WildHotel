@@ -70,6 +70,7 @@ export default function CreateBookingForm({ onCloseNodal }) {
   return (
     // Pass props to From component
     <Form
+    className="booking-form-wrapper"
       onSubmit={handleSubmit(onSubmit, onError)}
       type={onCloseNodal ? "modal" : "regular"}
     >

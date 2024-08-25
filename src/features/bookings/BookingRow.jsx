@@ -79,7 +79,7 @@ function BookingRow({
     <Table.Row>
       <Cabin>{cabinName}</Cabin>
 
-      <Stacked>
+      <Stacked className="stacked">
         <span>{guestName}</span>
         <span>{email}</span>
       </Stacked>
