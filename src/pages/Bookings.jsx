@@ -12,7 +12,7 @@ export default function Bookings() {
       <BookingTableOperations/>
     </Row>
    
-    <Row>
+    <Row className="bookings-body-container">
       <BookingTable />
       <AddBooking/>
     </Row>

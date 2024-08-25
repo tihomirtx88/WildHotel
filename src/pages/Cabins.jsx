@@ -7,12 +7,12 @@ import CabinTableOperations from "../features/cabins/CabinTableOperations";
 export default function Cabins() {
   return (
     <>
-      <Row type="horizontal">
+      <Row className="cabin-row-wrapper" type="horizontal">
         <Heading as="h1">All cabins</Heading>
-        <CabinTableOperations/>
+        <CabinTableOperations />
       </Row>
 
-      <Row>
+      <Row className="cabin-row-wrapper-body">
         <CabinTable />
         <AddCabin/>
       </Row>

@@ -4,7 +4,7 @@ import SortBy from "../../ui/SortBy";
 
 export default function CabinTableOperations() {
   return (
-    <TableOperations>
+    <TableOperations className="cabin-row-wrapper-operations">
       <Filter
         filterfield="discount"
         optionsArray={[

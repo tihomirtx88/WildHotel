@@ -4,7 +4,7 @@ import CreateBookingForm from "./CreateBookingForm";
 
 export default function AddBooking() {
   return (
-    <div>
+    <div className="modal-wrapper">
       <Modal>
         <Modal.Open opens="booking-form">
           <Button>Add new booking</Button>

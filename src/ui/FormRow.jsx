@@ -46,7 +46,7 @@ const Error = styled.span`
 
 function FormRow({ label, error, children }) {
   return (
-    <StyledFormRow>
+    <StyledFormRow className="form-wrapper">
       {/* We use id on the input  */}
       {label && <Label htmlFor={children.props.id}>{label}</Label>}
       {children}

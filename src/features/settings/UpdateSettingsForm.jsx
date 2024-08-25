@@ -32,7 +32,7 @@ function UpdateSettingsForm() {
   if (isLoading) return <Spinner />;
 
   return (
-    <Form>
+    <Form className='update-acount-container'>
       <FormRow label="Minimum nights/booking">
         <Input
           type="number"

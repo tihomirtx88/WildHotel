@@ -120,7 +120,7 @@ function BookingDataBox({ booking }) {
   } = booking;
 
   return (
-    <StyledBookingDataBox>
+    <StyledBookingDataBox className="chekin-box-body-container">
       <Header>
         <div>
           <HiOutlineHomeModern />
@@ -139,7 +139,7 @@ function BookingDataBox({ booking }) {
         </p>
       </Header>
 
-      <Section>
+      <Section className="chekin-box-body-container-main">
         <Guest>
           {countryFlag && <Flag src={countryFlag} alt={`Flag of ${country}`} />}
           <p>

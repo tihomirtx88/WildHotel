@@ -99,13 +99,13 @@ export default function ProfileDataBox({ user }) {
     <StyledProfileDataBox>
       <Header>Personal information</Header>
 
-      <Section>
+      <Section className="profile-container-wrapper">
         <ProfileInfo>
           <ProfileEmail>
            {email}
           </ProfileEmail>
         </ProfileInfo>
-        <NationalIdAndFlag>
+        <NationalIdAndFlag className="profile-details-info">
           <ProfileAvatar src={user_metadata.avatar} alt="" />
           <ProfileEmail>National ID: 3432432</ProfileEmail>
         </NationalIdAndFlag>

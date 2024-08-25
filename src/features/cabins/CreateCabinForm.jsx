@@ -59,7 +59,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseNodal }) {
 
   return (
     // Pass props to From component
-    <Form onSubmit={handleSubmit(onSubmit, onError)} type={onCloseNodal ? 'modal' : 'regular'}>
+    <Form className="cabin-form" onSubmit={handleSubmit(onSubmit, onError)} type={onCloseNodal ? 'modal' : 'regular'}>
       <FormRow label="Cabin name" error={errors?.name?.message}>
         <Input
           type="text"

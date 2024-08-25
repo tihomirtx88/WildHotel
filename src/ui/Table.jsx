@@ -75,14 +75,14 @@ function Header({children}){
 
 function Row({children}){
   const {columns}= useContext(TableContext);
-  return <StyledRow columns={columns} role="row">{children}</StyledRow>
+  return <StyledRow className="bookings-row" columns={columns} role="row">{children}</StyledRow>
 }
 
 // Get Cabins and map with render prop 
 function Body({data, render}){
   if(!data.length) return <Empty>No data to show at the moment</Empty>
   
-   return <StyledBody>
+   return <StyledBody className="bookings-body">
     {data.map(render)}
    </StyledBody>
 }

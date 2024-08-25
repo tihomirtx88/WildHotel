@@ -4,7 +4,7 @@ import TableOperations from "../../ui/TableOperations";
 
 function BookingTableOperations() {
   return (
-    <TableOperations>
+    <TableOperations className="booking-table-operations">
       <Filter
         filterfield="status"
         optionsArray={[

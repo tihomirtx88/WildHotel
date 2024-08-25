@@ -3,7 +3,7 @@ import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
 
 const StyledHeader = styled.header`
- background-color: var(--color-grey-0);
+  background-color: var(--color-grey-0);
   padding: 1.2rem 4.8rem;
   border-bottom: 1px solid var(--color-gray-100);
 
@@ -11,6 +11,15 @@ const StyledHeader = styled.header`
   gap: 2.4rem;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 480px) {
+    justify-content: space-between; /* Align items for mobile */
+  }
+
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+  }
 `;
 
 export default function Header() {
