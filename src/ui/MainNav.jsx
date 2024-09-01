@@ -51,14 +51,25 @@ const StylesNavLink = styled(NavLink)`
   &.active:visited svg {
     color: var(--color-brand-600);
   }
+
+  @media (max-width: 1024px) {
+    &:link,
+    &:visited {
+      padding: 1.2rem 0;
+    }
+  }
+
+  @media (max-width: 550px){
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default function MainNav() {
-
   return (
     <nav>
       <NavList>
-        <li>
+        <li className="nav-links">
           <StylesNavLink to="/dashboard">
             <HiOutlineHome />
             <span>Home</span>
