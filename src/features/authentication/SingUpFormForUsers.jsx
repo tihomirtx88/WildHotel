@@ -5,6 +5,7 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import useSignUp from "./useSignUp";
 import FormRowVertical from "../../ui/FormRowVertical";
+import { Link } from "react-router-dom";
 
 const SingUpFormForUsers = () => {
   // Api
@@ -34,7 +35,7 @@ const SingUpFormForUsers = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} className="register-form-container">
       <FormRowVertical>
         <FormRow label="Full name" error={errors?.fullName?.message}>
           <Input
@@ -143,6 +144,7 @@ const SingUpFormForUsers = () => {
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
+        <Link className="sign-n-button" to="/login">Or sign in</Link>
       </FormRow>
     </Form>
   );
