@@ -15,7 +15,7 @@ const RegisterLayout = styled.main`
 
 const Register = () => {
   return (
-    <RegisterLayout>
+    <RegisterLayout className="register-page-container">
       <Logo />
       <Heading as="h4">Register new account</Heading>
       <SingUpFormForUsers />
