@@ -45,7 +45,7 @@ export default function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login-form-container">
       <FormRowVertical label="Email address">
         <Input
           type="email"
