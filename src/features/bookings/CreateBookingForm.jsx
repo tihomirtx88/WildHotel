@@ -13,8 +13,9 @@ export default function CreateBookingForm({ onCloseNodal }) {
   const { createBooking, isLoadingbooking } = useCreateBookings();
   const { cabins } = useCabins();
   const { user } = useUser();
+  console.log(user, 'from user booking');
+  
 
-  console.log(cabins, "cabins");
   const isWorking = isLoadingbooking;
 
   const { register, handleSubmit, watch, setValue , reset, formState } = useForm();
