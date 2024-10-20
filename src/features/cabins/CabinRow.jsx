@@ -9,6 +9,7 @@ import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import { useUser } from "../authentication/useUser";
 
 const Img = styled.img`
   display: block;
@@ -45,6 +46,7 @@ const Discount = styled.div`
 export default function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const { isCreating, createCabin } = useCrateCabin();
+  const { isAdmin } = useUser();
 
   const {
     name,
@@ -79,7 +81,7 @@ export default function CabinRow({ cabin }) {
         <span>&mdash;</span>
       )}
       <div>
-        <Modal>
+        {isAdmin ? (  <Modal>
           <Menus.Menu>
             <Menus.Toggle id={cabinId} />
 
@@ -109,7 +111,8 @@ export default function CabinRow({ cabin }) {
               onConfirm={() => deleteCabin(cabinId)}
             />
           </Modal.Window>
-        </Modal>
+        </Modal>) : ("")}
+      
       </div>
     </Table.Row>
   );
