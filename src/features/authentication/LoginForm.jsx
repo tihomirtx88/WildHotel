@@ -21,8 +21,8 @@ import { Link } from "react-router-dom";
 // `;
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("superAdmin@abv.bg");
-  const [password, setPassword] = useState("777733");
+  const [email, setEmail] = useState("superMario@abv.bg");
+  const [password, setPassword] = useState("12345678");
 
   const { isLoadingLogin, loginData } = useLogin();
 

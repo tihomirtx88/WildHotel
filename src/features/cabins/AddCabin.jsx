@@ -1,19 +1,22 @@
 import Modal from "../../ui/Modal";
 import CreateCabinForm from "./CreateCabinForm";
 import Button from "../../ui/Button";
+import { useUser } from "../authentication/useUser";
 
 
 export default function AddCabin() {
+  const { isAdmin } = useUser();
   return (
     <div>
-      <Modal>
+      {isAdmin ? (  <Modal>
         <Modal.Open opens="cabin-form">
           <Button>Add new cabin</Button>
         </Modal.Open>
         <Modal.Window name="cabin-form">
           <CreateCabinForm />
         </Modal.Window>
-      </Modal>
+      </Modal>): ("")}
+    
     </div>
   );
 }
